@@ -22,10 +22,10 @@ const SpecialRecipes = () => {
 
    return (
       <section className="special">
-         <h3>Our Special Recipies</h3>
-         <div >
+         <h2>Our Special Recipies</h2>
+         <div>
             {specialRecipes?.map((recipe, index) => {
-               if (index < 8) {
+               if (index < 12) {
                   return <RecipeCard key={recipe.idMeal} recipe={recipe} />;
                }
             })}
