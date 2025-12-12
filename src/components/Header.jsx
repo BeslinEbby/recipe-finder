@@ -9,14 +9,14 @@ const Header = () => {
       <header>
          <div className="logo">
             <Link to={"/"} className="logo">
-               Reci-Find
+               Reci - Find
             </Link>
          </div>
          <nav>
             <Link to={"/all"}>All Recipes</Link>
             <Link to={"/saved"}>Saved</Link>
          </nav>
-         <div className="search">
+         <div className="searchBox">
             <input
                type="text"
                value={searchInput}
