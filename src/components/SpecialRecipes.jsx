@@ -11,7 +11,6 @@ const SpecialRecipes = () => {
          const response = await axiosInstance("/search.php?f=b");
          const data = await response.data;
          setSpecialRecipes(data.meals);
-         console.log(response);
       } catch (error) {
          console.log("error on fetching Special recipies : ", error);
       }
@@ -27,7 +26,7 @@ const SpecialRecipes = () => {
          <div >
             {specialRecipes?.map((recipe, index) => {
                if (index < 8) {
-                  return <RecipeCard recipe={recipe} />;
+                  return <RecipeCard key={recipe.idMeal} recipe={recipe} />;
                }
             })}
          </div>
