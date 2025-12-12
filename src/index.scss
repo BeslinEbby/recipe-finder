@@ -1,3 +1,6 @@
+$primaryColor: orange;
+$secondaryColor: #F1F3F2;
+
 * {
    margin: 0;
    padding: 0;
@@ -5,16 +8,21 @@
    font-family: Arial, sans-serif;
 }
 
+.app{
+  width: 90%;
+  margin: auto;
+}
+
 header {
    height: 60px;
-   width: 100%;
+   width: 90%;
+   margin: 0 auto;
    display: flex;
    align-items: center;
    justify-content: space-between;
-   padding: 0 40px;
    position: fixed;
    top: 0;
-   left: 0;
+   left: auto;
    z-index: 50;
 
    a {
@@ -35,7 +43,7 @@ header {
    }
 
    .searchBox {
-      background-color: #f3f5f5;
+      background-color: $secondaryColor;
       width: 25%;
       height: 36px;
       display: flex;
@@ -62,4 +70,31 @@ header {
          cursor: pointer;
       }
    }
+}
+
+.hero{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 64px;
+  height: 320px;
+  width: 100%;
+  background-color: $secondaryColor;
+  border-radius: 8px;
+
+  div{
+    padding: 0 60px;
+    text-transform: capitalize;
+  
+  h2{
+    padding: 8px 0;
+    color: $primaryColor;
+  }
+}
+  img{
+    height: 100%;
+    width: 60%;
+    object-fit: fill;
+    border-radius: 8px;
+  }
 }
