@@ -12,7 +12,7 @@ const SpecialRecipes = () => {
          const data = await response.data;
          setSpecialRecipes(data.meals);
       } catch (error) {
-         console.log("error on fetching Special recipies : ", error);
+         console.log("error on fetching Special recipes : ", error);
       }
    };
 
@@ -22,7 +22,7 @@ const SpecialRecipes = () => {
 
    return (
       <section className="special">
-         <h2>Our Special Recipies</h2>
+         <h2>Our Special Recipes</h2>
          <div>
             {specialRecipes?.map((recipe, index) => {
                if (index < 12) {
