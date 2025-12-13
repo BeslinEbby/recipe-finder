@@ -221,8 +221,11 @@ header {
    padding-top: 64px;
 }
 
+.allRecipes{
+   padding-top: 72px;
+}
 .categories {
-   padding: 80px 16px;
+   padding: 16px;
 
    ul {
       display: flex;
@@ -246,4 +249,13 @@ header {
    .highlight {
       background-color: $primaryColor;
    }
+}
+
+.filtered{
+   width: 100%;
+   display: grid;
+   grid-template-columns: repeat(5, 1fr);
+   gap: 16px;
+   padding: 16px;
+
 }

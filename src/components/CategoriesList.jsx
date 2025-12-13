@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axiosInstance from "../api/apiInstance";
 
 const CategoriesList = ({category, setCategory}) => {
@@ -9,9 +9,7 @@ const CategoriesList = ({category, setCategory}) => {
       try {
          const response = await axiosInstance("/categories.php");
          const data = await response.data;
-         setCategories(data.categories);
-         console.log(data);
-         
+         setCategories(data.categories);         
       } catch (error) {
          console.log("error on fetching all categories ", error);
       }
