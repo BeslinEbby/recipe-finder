@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
+import CategoriesList from '../components/CategoriesList'
 
 const AllRecipesPage = () => {
+  const [category, setCategory]=useState("")
+
   return (
-    <div>AllRecipesPage</div>
+    <div>
+      <CategoriesList category={category} setCategory={setCategory}/>
+    </div>
   )
 }
 

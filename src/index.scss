@@ -216,7 +216,34 @@ header {
    background-color: $secondaryColor;
 }
 
-.selected{
+.selected {
    padding: 20px;
    padding-top: 64px;
+}
+
+.categories {
+   padding: 80px 16px;
+
+   ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px 20px;
+      list-style: none;
+
+      li {
+         background-color: $secondaryColor;
+         border-radius: 20px;
+         border: 1px solid rgba(0, 0, 0, 0.4);
+         padding: 8px 20px;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         cursor: pointer;
+      }
+   }
+
+   .highlight {
+      background-color: $primaryColor;
+   }
 }
