@@ -4,10 +4,10 @@ import RecipeCard from "./RecipeCard";
 import Pagination from "./Pagination";
 import { PaginationContext } from "../contexts/PaginationContext";
 
-const FilteredRecipes = ({ category }) => {
+const FilteredRecipes = () => {
    const [cattedRecipies, setCattedRecipies] = useState();
 
-   const { firstIndex, lastIndex } = useContext(PaginationContext);
+   const { category, firstIndex, lastIndex } = useContext(PaginationContext);
 
    const fetchRecipiesByCat = async () => {
       try {

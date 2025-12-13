@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axiosInstance from "../api/apiInstance";
+import { PaginationContext } from "../contexts/PaginationContext";
 
-const CategoriesList = ({category, setCategory}) => {
+const CategoriesList = () => {
 
    const [categories, setCategories] = useState([]);
+
+   const {category, showRecipesByCat} =useContext(PaginationContext)
 
    const fetchAllCategories = async () => {
       try {
@@ -25,7 +28,7 @@ const CategoriesList = ({category, setCategory}) => {
             {categories.map((item) => (
                <li
                   key ={item.idCategory} className={category === item.strCategory ? "highlight" : ""}
-                  onClick={() => setCategory(item.strCategory)}
+                  onClick={() => showRecipesByCat(item.strCategory)}
                >
                   {item.strCategory}
                </li>
