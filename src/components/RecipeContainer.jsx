@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
+import { SavedRecipesContext } from "../contexts/SavedRecipeContext";
 
 const RecipeContainer = ({ recipe }) => {
+   const { savedRecipes, savedRecipesHandler } = useContext(SavedRecipesContext);
+
+   console.log(savedRecipes);
+   
+
    return (
       <div className="recipeContainer">
          <div className="recipeHeader">
@@ -9,7 +15,12 @@ const RecipeContainer = ({ recipe }) => {
                <div className="thumbnail">
                   <img src={recipe.strMealThumb} alt="" />
                </div>
-               <button>save</button>
+               <button
+                  onClick={() => savedRecipesHandler(recipe)}
+                  disabled={savedRecipes?.find((item) => item.idMeal === recipe.idMeal)}
+               >
+                  {savedRecipes?.find(item => item.idMeal === recipe.idMeal) ? "Saved" : "Save"}
+               </button>
             </div>
             <div className="right">
                <p>
