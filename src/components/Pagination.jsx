@@ -17,10 +17,6 @@ const Pagination = ({ recipes }) => {
    const lastPageIndex = pageSection * 4;
    const firstPageIndex = lastPageIndex - 4;
 
-   console.log(firstPageIndex);
-   console.log(currentPage);
-   
-
    return (
       <>
          {pageLength > 0 && (

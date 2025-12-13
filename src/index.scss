@@ -220,6 +220,22 @@ header {
 .selected {
    padding: 20px;
    padding-top: 64px;
+
+   .related {
+      text-align: center;
+         padding: 0 80px;
+
+
+      h3 {
+         padding: 20px 0;
+      }
+
+      &-recipes {
+         display: grid;
+         grid-template-columns: repeat(4, 1fr);
+         gap: 16px;
+      }
+   }
 }
 
 .allRecipes {
@@ -257,12 +273,12 @@ header {
    padding: 16px;
    width: 100%;
 
-   &-recipes{
-   display: grid;
-   grid-template-columns: repeat(4, 1fr);
-   gap: 16px;
+   &-recipes {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
    }
-   &-pagination{
+   &-pagination {
       display: flex;
    }
 }
@@ -283,7 +299,6 @@ header {
       border: 2px solid rgba(0, 0, 0);
       border-radius: 4px;
       cursor: pointer;
-
    }
    button:disabled {
       opacity: 0.7;

@@ -5,33 +5,33 @@ import Pagination from "./Pagination";
 import { PaginationContext } from "../contexts/PaginationContext";
 
 const FilteredRecipes = () => {
-   const [cattedRecipies, setCattedRecipies] = useState();
+   const [cattedRecipes, setCattedRecipes] = useState();
 
    const { category, firstIndex, lastIndex } = useContext(PaginationContext);
 
-   const fetchRecipiesByCat = async () => {
+   const fetchRecipesByCat = async () => {
       try {
          const response = await axiosInstance(`/filter.php?c=${category}`);
          const data = await response.data;
-         setCattedRecipies(data.meals);
+         setCattedRecipes(data.meals);
       } catch (error) {
-         console.log("error on fetching Recipies by category ", error);
+         console.log("error on fetching Recipes by category ", error);
       }
    };
 
    useEffect(() => {
-      fetchRecipiesByCat();
-   }, [category]);
+      fetchRecipesByCat();
+   }, [category]);   
 
    return (
       <section className="filtered">
          <div className="filtered-recipes">
-            {cattedRecipies?.slice(firstIndex, lastIndex).map((recipe) => (
+            {cattedRecipes?.slice(firstIndex, lastIndex).map((recipe) => (
                <RecipeCard recipe={recipe} />
             ))}
          </div>
          <div className="filtered-pagination">
-            <Pagination recipes={cattedRecipies} />
+            <Pagination recipes={cattedRecipes} />
          </div>
       </section>
    );
