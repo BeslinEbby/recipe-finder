@@ -1,9 +1,25 @@
-import React from 'react'
+import React, { useContext } from "react";
+import RecipeCard from "../components/RecipeCard";
+import { SavedRecipesContext } from "../contexts/SavedRecipeContext";
 
 const SavedRecipesPage = () => {
-  return (
-    <div>SavedRecipesPage</div>
-  )
-}
+   const { savedRecipes } = useContext(SavedRecipesContext);
 
-export default SavedRecipesPage
+   return (
+      <>
+         {savedRecipes?.length > 0 ? (
+            <section className="saved">
+               {savedRecipes?.map((recipe) => (
+                  <RecipeCard recipe={recipe} />
+               ))}
+            </section>
+         ) : (
+            <section className="noSaved">
+               <p>You don't have any saved recipes</p>
+            </section>
+         )}
+      </>
+   );
+};
+
+export default SavedRecipesPage;
