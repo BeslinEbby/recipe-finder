@@ -2,16 +2,15 @@ import React, { useContext } from "react";
 import { SavedRecipesContext } from "../contexts/SavedRecipeContext";
 
 const RecipeContainer = ({ recipe }) => {
-   const { savedRecipes, savedRecipesHandler } = useContext(SavedRecipesContext);
-
-   console.log(savedRecipes);
    
+   const { savedRecipes, savedRecipesHandler } = useContext(SavedRecipesContext);   
 
    return (
       <div className="recipeContainer">
+            <h3>it's time to try this recipe</h3>
          <div className="recipeHeader">
             <div className="left">
-               <h3>{recipe.strMeal}</h3>
+               <h4>{recipe.strMeal.toUpperCase()}</h4>
                <div className="thumbnail">
                   <img src={recipe.strMealThumb} alt="" />
                </div>
