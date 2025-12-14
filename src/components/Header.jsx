@@ -1,9 +1,11 @@
 import {  useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { IoSearchOutline } from "react-icons/io5";
 
 const Header = () => {
    const [searchInput, setSearchInput] = useState("");
+
+   const location=useLocation()   
 
    return (
       <header>
@@ -13,8 +15,15 @@ const Header = () => {
             </Link>
          </div>
          <nav>
-            <Link to={"/all"}>All Recipes</Link>
-            <Link to={"/saved"}>Saved</Link>
+            <Link className={location.pathname === "/" ? "underline" : ""} to={"/"}>
+               Home
+            </Link>
+            <Link className={location.pathname === "/all" ? "underline" : ""} to={"/all"}>
+               Recipes
+            </Link>
+            <Link className={location.pathname === "/saved" ? "underline" : ""} to={"/saved"}>
+               Saved
+            </Link>
          </nav>
          <div className="searchBox">
             <input
