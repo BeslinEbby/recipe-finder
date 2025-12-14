@@ -7,7 +7,6 @@ const SavedRecipesProvider = ({ children }) => {
    const [savedRecipes, setSavedRecipes] = useState(
       localStorage.getItem("savedRecipes") !== "null" ? JSON.parse(localStorage.getItem("savedRecipes")) : []
    );
-   console.log(savedRecipes);
 
    const savedRecipesHandler = (recipe) => {
          const exists=savedRecipes.find((item)=>item.idMeal === recipe.idMeal)
@@ -16,7 +15,6 @@ const SavedRecipesProvider = ({ children }) => {
          }else{
             setSavedRecipes([...savedRecipes, recipe]);
          }
-      
    };
    
    useEffect(() => {

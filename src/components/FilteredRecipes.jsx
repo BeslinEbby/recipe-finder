@@ -27,7 +27,7 @@ const FilteredRecipes = () => {
       <section className="filtered">
          <div className="filtered-recipes">
             {cattedRecipes?.slice(firstIndex, lastIndex).map((recipe) => (
-               <RecipeCard recipe={recipe} />
+               <RecipeCard key={recipe.idMeal} recipe={recipe} />
             ))}
          </div>
          <div className="filtered-pagination">

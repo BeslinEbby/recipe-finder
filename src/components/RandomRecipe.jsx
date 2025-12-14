@@ -15,7 +15,6 @@ const RandomRecipe = () => {
             console.log("Error on fetching random recipe : ", error);
         }
     };
-    console.log(randomRecipe);
 
     useEffect(() => {
        fetchRandomRecipe();

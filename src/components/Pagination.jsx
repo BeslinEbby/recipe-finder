@@ -26,6 +26,7 @@ const Pagination = ({ recipes }) => {
                </button>
                {totalPages?.slice(firstPageIndex, lastPageIndex).map((num) => (
                   <button
+                     key={num}
                      className={currentPage === num ? "highlight" : ""}
                      onClick={() => setCurrentPage(num)}
                   >
