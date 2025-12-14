@@ -17,9 +17,8 @@ const RecipeContainer = ({ recipe }) => {
                </div>
                <button
                   onClick={() => savedRecipesHandler(recipe)}
-                  disabled={savedRecipes?.find((item) => item.idMeal === recipe.idMeal)}
                >
-                  {savedRecipes?.find(item => item.idMeal === recipe.idMeal) ? "Saved" : "Save"}
+                  {savedRecipes?.find(item => item.idMeal === recipe.idMeal) ? "Remove" : "Save"}
                </button>
             </div>
             <div className="right">

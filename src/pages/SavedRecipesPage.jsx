@@ -10,7 +10,7 @@ const SavedRecipesPage = () => {
          {savedRecipes?.length > 0 ? (
             <section className="saved">
                {savedRecipes?.map((recipe) => (
-                  <RecipeCard recipe={recipe} />
+                  <RecipeCard key={recipe.idMeal} recipe={recipe} />
                ))}
             </section>
          ) : (
